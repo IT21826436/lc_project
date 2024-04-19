@@ -22,6 +22,8 @@ export default function Navbar() {
                 <i className="tf-icons bx bx-menu bx-sm align-middle" />
               </button>
               {/* Mobile menu toggle: End*/}
+
+              <Link to="/">
               <a
                 href="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/landing"
                 className="app-brand-link"
@@ -35,6 +37,7 @@ export default function Navbar() {
               style={{ width: "200px" }}
             />
               </a>
+              </Link>
             </div>
             {/* Menu logo wrapper: End */}
             {/* Menu wrapper: Start */}
