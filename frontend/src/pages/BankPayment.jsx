@@ -142,7 +142,7 @@ export default function BankPayment() {
               </nav>
               {/* / Navbar */}
               {/* Content wrapper */}
-              <div className="content-wrapper" style={{textAlign:"start"}}>
+              <div className="content-wrapper mt-3" style={{textAlign:"start", width:"1378px" , marginLeft:"25px"}}>
                 {/* Content */}
                 <div className="container-xxl flex-grow-1 container-p-y">
                   <h4 className="fw-bold py-3 mb-4">

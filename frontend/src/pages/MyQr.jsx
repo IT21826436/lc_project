@@ -144,7 +144,7 @@ export default function MyQr() {
               
               {/* / Navbar */}
               {/* Content wrapper */}
-              <div className="content-wrapper shadow mt-3" style={{textAlign:"start", width:"1378px" , marginLeft:"25px"}}>
+              <div className="content-wrapper mt-3" style={{textAlign:"start", width:"1378px" , marginLeft:"25px"}}>
                 {/* Content */}
                 <div className="container-xxl flex-grow-1 container-p-y">
                   <h4 className="fw-bold py-3 mb-4">
