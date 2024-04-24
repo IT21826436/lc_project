@@ -1,19 +1,295 @@
-import React from 'react'
-import ParentSidebar from '../components/ParentSidebar'
+import React from "react";
+import ParentSidebar from "../components/ParentSidebar";
 
 export default function Children() {
   return (
     <div>
-         <>
+      <>
         <div className="layout-wrapper layout-content-navbar">
           <div className="layout-container">
             {/* Menu */}
-            <ParentSidebar/>
+            <aside
+              id="layout-menu"
+              className="layout-menu menu-vertical menu bg-menu-theme shadow"
+            >
+              <div className="app-brand demo">
+                <a href="/" className="app-brand-link">
+                  <span className="app-brand-logo demo">
+                    <img
+                      className="logo-light"
+                      src="img/ls.png"
+                      alt="logo"
+                      style={{ width: "200px" }}
+                    />
+                  </span>
+                </a>
+                <a
+                  href="javascript:void(0);"
+                  className="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none"
+                >
+                  <i className="bx bx-chevron-left bx-sm align-middle" />
+                </a>
+              </div>
+
+              <div className="menu-inner-shadow" />
+              <ul className="menu-inner py-1">
+                {/* Dashboard */}
+                <li className="menu-item active mt-3">
+                  <a href="/parent" className="menu-link">
+                    <i className="menu-icon tf-icons bx bx-home-circle" />
+                    <div data-i18n="Analytics">Dashboard</div>
+                  </a>
+                </li>
+                {/* Layouts */}
+                <li className="menu-item">
+                  <a
+                    href="javascript:void(0);"
+                    className="menu-link menu-toggle"
+                  >
+                    <i className="menu-icon tf-icons bx bx-layout" />
+                    <div data-i18n="Layouts">Layouts</div>
+                  </a>
+                  <ul className="menu-sub">
+                    <li className="menu-item">
+                      <a href="layouts-without-menu.html" className="menu-link">
+                        <div data-i18n="Without menu">Without menu</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a
+                        href="layouts-without-navbar.html"
+                        className="menu-link"
+                      >
+                        <div data-i18n="Without navbar">Without navbar</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="layouts-container.html" className="menu-link">
+                        <div data-i18n="Container">Container</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="layouts-fluid.html" className="menu-link">
+                        <div data-i18n="Fluid">Fluid</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="layouts-blank.html" className="menu-link">
+                        <div data-i18n="Blank">Blank</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="menu-header small text-uppercase">
+                  <span className="menu-header-text">Pages</span>
+                </li>
+                <li className="menu-item">
+                  <a href="/children" className="menu-link menu-toggle">
+                    <i className="menu-icon tf-icons bx bx-user" />{" "}
+                    <div data-i18n="Account Settings">Children</div>
+                  </a>
+                </li>
+                <li className="menu-item">
+                  <a href="/bank-payment" className="menu-link menu-toggle">
+                    <i className="menu-icon tf-icons bx bx-money" />
+                    <div data-i18n="Authentications">Bank Payment</div>
+                  </a>
+                </li>
+                <li className="menu-item">
+                  <a href="/online-bank" className="menu-link menu-toggle">
+                    <i className="menu-icon tf-icons bx bx-credit-card" />
+                    <div data-i18n="Misc">Online Bank</div>
+                  </a>
+                </li>
+
+                <li className="menu-item">
+                  <a href="/my-qr" className="menu-link menu-toggle">
+                    <i className="menu-icon tf-icons bx bx-qr-scan" />
+                    <div data-i18n="Misc">My QR</div>
+                  </a>
+                </li>
+                {/* Components */}
+                <li className="menu-header small text-uppercase">
+                  <span className="menu-header-text">Components</span>
+                </li>
+                {/* Cards */}
+                <li className="menu-item">
+                  <a href="cards-basic.html" className="menu-link">
+                    <i className="menu-icon tf-icons bx bx-collection" />
+                    <div data-i18n="Basic">Cards</div>
+                  </a>
+                </li>
+                {/* User interface */}
+                <li className="menu-item">
+                  <a
+                    href="javascript:void(0)"
+                    className="menu-link menu-toggle"
+                  >
+                    <i className="menu-icon tf-icons bx bx-box" />
+                    <div data-i18n="User interface">User interface</div>
+                  </a>
+                  <ul className="menu-sub">
+                    <li className="menu-item">
+                      <a href="ui-accordion.html" className="menu-link">
+                        <div data-i18n="Accordion">Accordion</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-alerts.html" className="menu-link">
+                        <div data-i18n="Alerts">Alerts</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-badges.html" className="menu-link">
+                        <div data-i18n="Badges">Badges</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-buttons.html" className="menu-link">
+                        <div data-i18n="Buttons">Buttons</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-carousel.html" className="menu-link">
+                        <div data-i18n="Carousel">Carousel</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-collapse.html" className="menu-link">
+                        <div data-i18n="Collapse">Collapse</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-dropdowns.html" className="menu-link">
+                        <div data-i18n="Dropdowns">Dropdowns</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-footer.html" className="menu-link">
+                        <div data-i18n="Footer">Footer</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-list-groups.html" className="menu-link">
+                        <div data-i18n="List Groups">List groups</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-modals.html" className="menu-link">
+                        <div data-i18n="Modals">Modals</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-navbar.html" className="menu-link">
+                        <div data-i18n="Navbar">Navbar</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-offcanvas.html" className="menu-link">
+                        <div data-i18n="Offcanvas">Offcanvas</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a
+                        href="ui-pagination-breadcrumbs.html"
+                        className="menu-link"
+                      >
+                        <div data-i18n="Pagination & Breadcrumbs">
+                          Pagination &amp; Breadcrumbs
+                        </div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-progress.html" className="menu-link">
+                        <div data-i18n="Progress">Progress</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-spinners.html" className="menu-link">
+                        <div data-i18n="Spinners">Spinners</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-tabs-pills.html" className="menu-link">
+                        <div data-i18n="Tabs & Pills">Tabs &amp; Pills</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-toasts.html" className="menu-link">
+                        <div data-i18n="Toasts">Toasts</div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-tooltips-popovers.html" className="menu-link">
+                        <div data-i18n="Tooltips & Popovers">
+                          Tooltips &amp; popovers
+                        </div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a href="ui-typography.html" className="menu-link">
+                        <div data-i18n="Typography">Typography</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                {/* Extended components */}
+                <li className="menu-item">
+                  <a
+                    href="javascript:void(0)"
+                    className="menu-link menu-toggle"
+                  >
+                    <i className="menu-icon tf-icons bx bx-copy" />
+                    <div data-i18n="Extended UI">Extended UI</div>
+                  </a>
+                  <ul className="menu-sub">
+                    <li className="menu-item">
+                      <a
+                        href="extended-ui-perfect-scrollbar.html"
+                        className="menu-link"
+                      >
+                        <div data-i18n="Perfect Scrollbar">
+                          Perfect scrollbar
+                        </div>
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <a
+                        href="extended-ui-text-divider.html"
+                        className="menu-link"
+                      >
+                        <div data-i18n="Text Divider">Text Divider</div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="menu-item">
+                  <a href="icons-boxicons.html" className="menu-link">
+                    <i className="menu-icon tf-icons bx bx-crown" />
+                    <div data-i18n="Boxicons">Boxicons</div>
+                  </a>
+                </li>
+                {/* Forms & Tables */}
+                <li className="menu-header small text-uppercase">
+                  <span className="menu-header-text">Forms &amp; Tables</span>
+                </li>
+                {/* Forms */}
+                <li className="menu-item">
+                  <a
+                    href="javascript:void(0);"
+                    className="menu-link menu-toggle"
+                  >
+                    <i className="menu-icon tf-icons bx bx-detail" />
+                    <div data-i18n="Form Elements">Form Elements</div>
+                  </a>
+                </li>
+              </ul>
+            </aside>
 
             {/* / Menu */}
 
             {/* Layout container */}
-            <div className="layout-page">
+            <div className="layout-page ">
               {/* Navbar */}
               <nav
                 className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -143,50 +419,369 @@ export default function Children() {
               </nav>
               {/* / Navbar */}
               {/* Content wrapper */}
-              <div className="content-wrapper mt-3" style={{textAlign:"start", width:"1378px" , marginLeft:"25px"}}>
+              <div
+                className="content-wrapper mt-3 "
+                style={{
+                  textAlign: "start",
+                  width: "1378px",
+                  marginLeft: "25px",
+                }}
+              >
                 {/* Content */}
-                <div className="container-xxl flex-grow-1 container-p-y">
+                <div className="container-xxl flex-grow-1  container-p-y">
                   <h4 className="fw-bold py-3 mb-4">
                     <span className="text-muted fw-light">
                       Student Details /
                     </span>{" "}
                     Children
                   </h4>
-                  {/* <div className="row">
-                    <div className="col-md-12">
-                      <ul className="nav nav-pills flex-column flex-md-row mb-3">
-                        <li className="nav-item">
-                          <a
-                            className="nav-link active"
-                            href="javascript:void(0);"
-                          >
-                            <i className="bx bx-user me-1" /> Account
-                          </a>
-                        </li>
-                        <li className="nav-item">
-                          <a
-                            className="nav-link"
-                            href="pages-account-settings-notifications.html"
-                          >
-                            <i className="bx bx-bell me-1" /> Notifications
-                          </a>
-                        </li>
-                        <li className="nav-item">
-                          <a
-                            className="nav-link"
-                            href="pages-account-settings-connections.html"
-                          >
-                            <i className="bx bx-link-alt me-1" /> Connections
-                          </a>
-                        </li>
-                      </ul> 
-                     
+                  <div>
+                    <div className="row g-4 mb-4">
+                      <div className="col-xl-4 col-lg-5 col-md-5 order-1 order-md-0">
+                        {/* User Card */}
+                        <div className="card mb-4 shadow">
+                          <div className="card-body">
+                            <div className="user-avatar-section">
+                              <div className=" d-flex align-items-center flex-column">
+                                <img
+                                  className="img-fluid rounded my-4"
+                                  src="img/child2.jpeg"
+                                  height={110}
+                                  width={110}
+                                  alt="User avatar"
+                                />
+                                <div className="user-info text-center">
+                                  <h4 className="mb-2">Violet Mendoza</h4>
+                                  <span className="badge bg-label-secondary">
+                                    Author
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="d-flex justify-content-around flex-wrap my-4 py-3">
+                              <div className="d-flex align-items-start me-4 mt-3 gap-3">
+                                <span className="badge bg-label-primary p-2 rounded">
+                                  <i className="bx bx-check bx-sm" />
+                                </span>
+                                <div>
+                                  <h5 className="mb-0">1.23k</h5>
+                                  <span>Tasks Done</span>
+                                </div>
+                              </div>
+                              <div className="d-flex align-items-start mt-3 gap-3">
+                                <span className="badge bg-label-primary p-2 rounded">
+                                  <i className="bx bx-customize bx-sm" />
+                                </span>
+                                <div>
+                                  <h5 className="mb-0">568</h5>
+                                  <span>Projects Done</span>
+                                </div>
+                              </div>
+                            </div>
+                            <h5 className="pb-2 border-bottom mb-4">Details</h5>
+                            <div className="info-container">
+                              <ul className="list-unstyled">
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Username:
+                                  </span>
+                                  <span>violet.dev</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">Email:</span>
+                                  <span>vafgot@vultukir.org</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Status:
+                                  </span>
+                                  <span className="badge bg-label-success">
+                                    Active
+                                  </span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">Role:</span>
+                                  <span>Author</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Tax id:
+                                  </span>
+                                  <span>Tax-8965</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Contact:
+                                  </span>
+                                  <span>(123) 456-7890</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Languages:
+                                  </span>
+                                  <span>French</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Country:
+                                  </span>
+                                  <span>England</span>
+                                </li>
+                              </ul>
+                              <div className="d-flex justify-content-center pt-3">
+                                <a
+                                  href="javascript:;"
+                                  className="btn btn-primary me-3"
+                                  data-bs-target="#editUser"
+                                  data-bs-toggle="modal"
+                                >
+                                  Edit
+                                </a>
+                                <a
+                                  href="javascript:;"
+                                  className="btn btn-label-success suspend-user"
+                                >
+                                  Aprroved !
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {/* /User Card */}
+                      </div>
+
+                      <div className="col-xl-4 col-lg-5 col-md-5 order-1 order-md-0">
+                        {/* User Card */}
+                        <div className="card mb-4 shadow">
+                          <div className="card-body">
+                            <div className="user-avatar-section">
+                              <div className=" d-flex align-items-center flex-column">
+                                <img
+                                  className="img-fluid rounded my-4"
+                                  src="img/child2.jpeg"
+                                  height={110}
+                                  width={110}
+                                  alt="User avatar"
+                                />
+                                <div className="user-info text-center">
+                                  <h4 className="mb-2">Violet Mendoza</h4>
+                                  <span className="badge bg-label-secondary">
+                                    Author
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="d-flex justify-content-around flex-wrap my-4 py-3">
+                              <div className="d-flex align-items-start me-4 mt-3 gap-3">
+                                <span className="badge bg-label-primary p-2 rounded">
+                                  <i className="bx bx-check bx-sm" />
+                                </span>
+                                <div>
+                                  <h5 className="mb-0">1.23k</h5>
+                                  <span>Tasks Done</span>
+                                </div>
+                              </div>
+                              <div className="d-flex align-items-start mt-3 gap-3">
+                                <span className="badge bg-label-primary p-2 rounded">
+                                  <i className="bx bx-customize bx-sm" />
+                                </span>
+                                <div>
+                                  <h5 className="mb-0">568</h5>
+                                  <span>Projects Done</span>
+                                </div>
+                              </div>
+                            </div>
+                            <h5 className="pb-2 border-bottom mb-4">Details</h5>
+                            <div className="info-container">
+                              <ul className="list-unstyled">
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Username:
+                                  </span>
+                                  <span>violet.dev</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">Email:</span>
+                                  <span>vafgot@vultukir.org</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Status:
+                                  </span>
+                                  <span className="badge bg-label-success">
+                                    Active
+                                  </span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">Role:</span>
+                                  <span>Author</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Tax id:
+                                  </span>
+                                  <span>Tax-8965</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Contact:
+                                  </span>
+                                  <span>(123) 456-7890</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Languages:
+                                  </span>
+                                  <span>French</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Country:
+                                  </span>
+                                  <span>England</span>
+                                </li>
+                              </ul>
+                              <div className="d-flex justify-content-center pt-3">
+                                <a
+                                  href="javascript:;"
+                                  className="btn btn-primary me-3"
+                                  data-bs-target="#editUser"
+                                  data-bs-toggle="modal"
+                                >
+                                  Edit
+                                </a>
+                                <a
+                                  href="javascript:;"
+                                  className="btn btn-label-warning suspend-user"
+                                >
+                                  Pending !
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {/* /User Card */}
+                      </div>
+
+                      <div className="col-xl-4 col-lg-5 col-md-5 order-1 order-md-0">
+                        {/* User Card */}
+                        <div className="card mb-4 shadow">
+                          <div className="card-body">
+                            <div className="user-avatar-section">
+                              <div className=" d-flex align-items-center flex-column">
+                                <img
+                                  className="img-fluid rounded my-4"
+                                  src="img/child2.jpeg"
+                                  height={110}
+                                  width={110}
+                                  alt="User avatar"
+                                />
+                                <div className="user-info text-center">
+                                  <h4 className="mb-2">Violet Mendoza</h4>
+                                  <span className="badge bg-label-secondary">
+                                    Author
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="d-flex justify-content-around flex-wrap my-4 py-3">
+                              <div className="d-flex align-items-start me-4 mt-3 gap-3">
+                                <span className="badge bg-label-primary p-2 rounded">
+                                  <i className="bx bx-check bx-sm" />
+                                </span>
+                                <div>
+                                  <h5 className="mb-0">1.23k</h5>
+                                  <span>Tasks Done</span>
+                                </div>
+                              </div>
+                              <div className="d-flex align-items-start mt-3 gap-3">
+                                <span className="badge bg-label-primary p-2 rounded">
+                                  <i className="bx bx-customize bx-sm" />
+                                </span>
+                                <div>
+                                  <h5 className="mb-0">568</h5>
+                                  <span>Projects Done</span>
+                                </div>
+                              </div>
+                            </div>
+                            <h5 className="pb-2 border-bottom mb-4">Details</h5>
+                            <div className="info-container">
+                              <ul className="list-unstyled">
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Username:
+                                  </span>
+                                  <span>violet.dev</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">Email:</span>
+                                  <span>vafgot@vultukir.org</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Status:
+                                  </span>
+                                  <span className="badge bg-label-success">
+                                    Active
+                                  </span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">Role:</span>
+                                  <span>Author</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Tax id:
+                                  </span>
+                                  <span>Tax-8965</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Contact:
+                                  </span>
+                                  <span>(123) 456-7890</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Languages:
+                                  </span>
+                                  <span>French</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Country:
+                                  </span>
+                                  <span>England</span>
+                                </li>
+                              </ul>
+                              <div className="d-flex justify-content-center pt-3">
+                                <a
+                                  href="javascript:;"
+                                  className="btn btn-primary me-3"
+                                  data-bs-target="#editUser"
+                                  data-bs-toggle="modal"
+                                >
+                                  Edit
+                                </a>
+                                <a
+                                  href="javascript:;"
+                                  className="btn btn-label-danger suspend-user"
+                                >
+                                  Rejected !
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {/* /User Card */}
+                      </div>
+
                     </div>
-                  </div> */}
+                  </div>
                 </div>
                 {/* / Content */}
                 {/* Footer */}
-                
+
                 {/* / Footer */}
                 <div className="content-backdrop fade" />
               </div>
@@ -201,5 +796,5 @@ export default function Children() {
         {/* / Layout wrapper */}
       </>
     </div>
-  )
+  );
 }

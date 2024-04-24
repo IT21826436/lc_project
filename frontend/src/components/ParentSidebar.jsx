@@ -5,7 +5,7 @@ export default function ParentSidebar() {
     <div>
           <aside
               id="layout-menu"
-              className="layout-menu menu-vertical menu bg-menu-theme"
+              className="layout-menu menu-vertical menu bg-menu-theme shadow"
             >
               <div className="app-brand demo">
                 <a href="/" className="app-brand-link">
