@@ -22,10 +22,10 @@ function App() {
           <Route exact path='/login' element={<Login/>} />
           <Route exact path='/register' element={<Register/>} />
           <Route exact path='/parent' element={<ParentDashboard/>} />
-          <Route exact path='/parent/bank-payment' element={<BankPayment/>} />
-          <Route exact path='/parent/children' element={<Children/>} />
-          <Route exact path='/parent/my-qr' element={<MyQr/>} />
-          <Route exact path='/parent/online-bank' element={<OnlineBank/>} />
+          <Route exact path='/bank-payment' element={<BankPayment/>} />
+          <Route exact path='/children' element={<Children/>} />
+          <Route exact path='/my-qr' element={<MyQr/>} />
+          <Route exact path='/online-bank' element={<OnlineBank/>} />
 
 
 

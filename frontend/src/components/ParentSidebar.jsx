@@ -80,7 +80,7 @@ export default function ParentSidebar() {
                 </li>
                 <li className="menu-item">
                   <a
-                    href="/parent/children"
+                    href="/children"
                     className="menu-link menu-toggle"
                   >
                     <i className="menu-icon tf-icons bx bx-user" />{" "}
@@ -89,7 +89,7 @@ export default function ParentSidebar() {
                 </li>
                 <li className="menu-item">
                   <a
-                    href="/parent/bank-payment"
+                    href="/bank-payment"
                     className="menu-link menu-toggle"
                   >
                     <i className="menu-icon tf-icons bx bx-money" />
@@ -98,7 +98,7 @@ export default function ParentSidebar() {
                 </li>
                 <li className="menu-item">
                   <a
-                    href="/parent/online-bank"
+                    href="/online-bank"
                     className="menu-link menu-toggle"
                   >
                     <i className="menu-icon tf-icons bx bx-credit-card" />
@@ -108,7 +108,7 @@ export default function ParentSidebar() {
 
                 <li className="menu-item">
                   <a
-                    href="/parent/my-qr"
+                    href="/my-qr"
                     className="menu-link menu-toggle"
                   >
                     <i className="menu-icon tf-icons bx bx-qr-scan" />

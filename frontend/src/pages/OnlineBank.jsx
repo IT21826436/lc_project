@@ -147,9 +147,9 @@ export default function OnlineBank() {
                 <div className="container-xxl flex-grow-1 container-p-y">
                   <h4 className="fw-bold py-3 mb-4">
                     <span className="text-muted fw-light">
-                      Account Settings /
+                      Payments /
                     </span>{" "}
-                    Account
+                    Online Bank
                   </h4>
                   {/* <div className="row">
                     <div className="col-md-12">
