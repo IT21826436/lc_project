@@ -5,6 +5,11 @@ import Login from './pages/Login';
 // In your React component file
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Register from './pages/Register';
+import ParentDashboard from './pages/ParentDashboard';
+import BankPayment from './pages/BankPayment';
+import Children from './pages/Children';
+import MyQr from './pages/MyQr';
+import OnlineBank from './pages/OnlineBank';
 
 
 function App() {
@@ -16,6 +21,15 @@ function App() {
           <Route exact path='/' element={<LandingPage/>} />
           <Route exact path='/login' element={<Login/>} />
           <Route exact path='/register' element={<Register/>} />
+          <Route exact path='/parent' element={<ParentDashboard/>} />
+          <Route exact path='/parent/bank-payment' element={<BankPayment/>} />
+          <Route exact path='/parent/children' element={<Children/>} />
+          <Route exact path='/parent/my-qr' element={<MyQr/>} />
+          <Route exact path='/parent/online-bank' element={<OnlineBank/>} />
+
+
+
+
 
 
         </Routes>

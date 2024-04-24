@@ -64,8 +64,8 @@ export default function Register() {
     let col = 1;
 
     const showRepeater = function () {
-      const formControl = this.querySelectorAll(".form-control, .form-select");
-      const formLabel = this.querySelectorAll(".form-label");
+      const formControl = this.querySelectorAll(".mb-3 .form-control, .mb-3 .form-select");
+      const formLabel = this.querySelectorAll(".mb-3 label");
 
       formControl.forEach((control, i) => {
         const id = "form-repeater-" + row + "-" + col;
@@ -90,18 +90,18 @@ export default function Register() {
       );
       const clone = repeaterList.firstElementChild.cloneNode(true);
       repeaterList.appendChild(clone);
-      const controls = clone.querySelectorAll(".form-control, .form-select");
+      const controls = clone.querySelectorAll(".mb-3 .form-control, .mb-3 .form-select");
       controls.forEach((control) => {
-        col++;
         const id = "form-repeater-" + row + "-" + col;
         control.setAttribute("id", id);
         col++;
-        const label = clone.querySelector(`[for="${control.id}"]`);
+        const label = clone.querySelector(`label[for="${control.id}"]`);
         if (label) {
           label.setAttribute("for", id);
         }
       });
       row++;
+      col = 1;
     };
 
     if (formRepeater) {
