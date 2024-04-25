@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import ParentSidebar from "../components/ParentSidebar";
 
 export default function BankPayment() {
+  const [totalPayment, setTotalPayment] = useState(0);
+  const [selectedMonths, setSelectedMonths] = useState([]);
+  const [error, setError] = useState("");
+
+  const handleCardChange = (event, month, amount) => {
+    if (event.target.checked) {
+      const lastSelectedMonth = selectedMonths[selectedMonths.length - 1];
+      const currentMonth = month;
+
+      if (
+        selectedMonths.length === 0 ||
+        (lastSelectedMonth && currentMonth === lastSelectedMonth + 1)
+      ) {
+        setSelectedMonths([...selectedMonths, currentMonth]);
+        setTotalPayment(totalPayment + amount);
+        setError("");
+      } else {
+        setError("Please select the months sequentially.");
+      }
+    } else {
+      const updatedMonths = selectedMonths.filter((m) => m !== month);
+      setSelectedMonths(updatedMonths);
+      setTotalPayment(totalPayment - amount);
+      setError("");
+    }
+  };
   return (
     <div>
       <>
@@ -434,7 +460,7 @@ export default function BankPayment() {
                   </h4>
 
                   <div className="nav-align-top">
-                    <ul className="nav nav-tabs" role="tablist">
+                    <ul className="nav nav-tabs d-flex" role="tablist">
                       <li className="nav-item">
                         <button
                           type="button"
@@ -468,410 +494,439 @@ export default function BankPayment() {
                           <div className="col-12"></div>
                           {/* /single card  */}
 
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp1"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp1"
+                                  onChange={(e) => handleCardChange(e, 1, 28)}
+                                  checked={selectedMonths.includes(1)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">January</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp2"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp2"
+                                  onChange={(e) => handleCardChange(e, 2, 28)}
+                                  checked={selectedMonths.includes(2)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">February</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp3"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp3"
+                                  onChange={(e) => handleCardChange(e, 3, 28)}
+                                  checked={selectedMonths.includes(3)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">March</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp4"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp4"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">April</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6 col-lg-4 ">
-                            <div class="card shadow mb-4">
-                              <div class="card-body">
-                                <div class="card-title header-elements">
-                                  <h5 class="m-0 me-2">January</h5>
-                                  <div class="card-title-elements ms-auto">
-                                    <label class="switch switch-primary switch-sm me-0">
-                                    <input className="form-check-input fs-5" type="checkbox" value="" id="defaultCheck1"/>    
-                                    </label>
-                                  </div>
-                                </div>
-                                <div className="d-flex">
-                                <p class="card-text">
-                                  2 Child Package
-                                </p>
-                                <p class="card-text fs-5" style={{marginLeft:"20px"}}>
-                                € 28
-                                </p>
-                                </div>
-                               
-                              </div>
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp5"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp5"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">May</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
                             </div>
                           </div>
 
-                          {/* <div className="col-lg-3 col-sm-6 mb-4">
-                            <div className="card" >
-                              <div className="card-body shadow">
-                                <div className="d-flex justify-content-between">
-                                  <div className="card-info">
-                                    <div>
-                                      <div>
-                                        <div class="form-check mt-3 mb-3">
-                                          <input
-                                            className="form-check-input fs-4"
-                                            type="checkbox"
-                                            value=""
-                                            id="defaultCheck1"
-                                          />
-                                          <label
-                                            className="form-check-label fs-4"
-                                            for="defaultCheck1"
-                                          >
-                                            January
-                                          </label>
-                                        </div>
-                                      </div>
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp6"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp6"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">June</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp7"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp7"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">July</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp8"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp8"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">August</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp9"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp9"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">September</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp10"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp10"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">Octomber</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp11"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp11"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">November</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="form-check custom-option custom-option-basic checked">
+                              <label
+                                class="form-check-label custom-option-content"
+                                for="customCheckTemp12"
+                              >
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="customCheckTemp12"
+                                  onChange={(e) => handleCardChange(e, 28)}
+                                />
+                                <span class="custom-option-header">
+                                  <span class="h6 mb-0">December</span>
+                                  <span>€ 28</span>
+                                </span>
+                                <span class="custom-option-body">
+                                  <small>2 Child Package </small>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div className="d-flex">
+                            <div
+                              class="d-flex border-primary p-3 border rounded mb-4 col-lg-6 mt-3"
+                              style={{ width: "630px" }}
+                            >
+                              <div class="avatar flex-shrink-0 me-3">
+                                <i className="bx bx-briefcase-alt-2 bx-md text-primary"></i>{" "}
+                              </div>
+                              <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                  <p class="mb-0">Your Payment</p>
+                                  <a
+                                    href="javascript:void(0)"
+                                    class="small"
+                                    data-bs-target="#upgradePlanModal"
+                                    data-bs-toggle="modal"
+                                  >
+                                    Upgrade Plan
+                                  </a>
+                                </div>
+                                <div class="user-progress">
+                                  <div class="d-flex justify-content-center">
+                                    <sup class="mt-3 mb-0 me-1">€</sup>
+                                    <h3 id="totalPayment" class="mb-0">
+                                      {totalPayment.toFixed(2)}
+                                    </h3>
+                                    <sub class="mt-auto mb-2"> /Year</sub>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* <div>
+                              <div
+                                className="mb-4 col-lg-12 mt-3"
+                                style={{
+                                  marginLeft: "100px",
+                                  marginTop: "-30px",
+                                }}
+                              >
+                                {error && (
+                                  <div
+                                    className="alert alert-danger"
+                                    role="alert"
+                                  >
+                                    {error}
+                                  </div>
+                                )}
+                              </div>
+                            </div> */}
+                            
+                          </div>
+
+                          <div class="mb-3 mt-3">
+                            <label for="formFile" class="form-label">
+                              Upload your slip here
+                            </label>
+                            <input
+                              class="form-control"
+                              type="file"
+                              id="formFile"
+                            />
+                          </div>
+
+                          <div>
+                            <div class="row col-md-6 col-lg-12 mt-3 d-flex justify-content-between">
+                              <div
+                                className="card shadow mb-4 col-md-6"
+                                style={{ height: "200px", width: "400px" }}
+                              >
+                                <div className="card-body">
+                                  <div className="row card-title header-elements">
+                                    <div className="fs-5 mb-2">
+                                      <label>Bank details</label>
                                     </div>
-
-                                    <div className="d-flex justify-content-between mb-1 mt-4" style={{width:"400px"}}>
-                                      <div>
-                                        <h4 className="card-title mb-0 me-2">
-                                          2 Child Package
-                                        </h4>
-                                      </div>
-
-                                      <div className="" style={{marginRight:"140px" , marginTop:"4px"}}>
-                                      <h5> € 28</h5>
-                                      </div>
+                                    <div className="mb-1">
+                                      <label>Account number: 1234567890</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Bank name: ABC Bank</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Branch: Main Branch</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>IFSC code: ABCD0123456</label>
                                     </div>
                                   </div>
-                                  <div className="card-icon">
-                                    <span className="badge bg-label-primary rounded p-2">
-                                      <i className="bx bx-trending-up bx-sm" />
-                                    </span>
+                                </div>
+                              </div>
+
+                              <div
+                                className="card shadow mb-4 col-md-6"
+                                style={{ height: "200px", width: "400px" }}
+                              >
+                                <div className="card-body">
+                                  <div className="row card-title header-elements">
+                                    <div className="fs-5 mb-2">
+                                      <label>Bank details</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Account number: 1234567890</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Bank name: ABC Bank</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Branch: Main Branch</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>IFSC code: ABCD0123456</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div
+                                className="card shadow mb-4 col-md-6"
+                                style={{ height: "200px", width: "400px" }}
+                              >
+                                <div className="card-body">
+                                  <div className="row card-title header-elements">
+                                    <div className="fs-5 mb-2">
+                                      <label>Bank details</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Account number: 1234567890</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Bank name: ABC Bank</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>Branch: Main Branch</label>
+                                    </div>
+                                    <div className="mb-1">
+                                      <label>IFSC code: ABCD0123456</label>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div> */}
-
-                          {/* <div className="col-lg-3 col-sm-6 mb-4">
-                            <div className="card">
-                              <div className="card-body">
-                                <div className="d-flex justify-content-between">
-                                  <div className="card-info">
-                                    <p className="card-text">Time On Site</p>
-                                    <div className="d-flex align-items-end mb-2">
-                                      <h4 className="card-title mb-0 me-2">
-                                        28m 14s
-                                      </h4>
-                                      <small className="text-success">
-                                        (+18%)
-                                      </small>
-                                    </div>
-                                    <small>Last Week Analytics</small>
-                                  </div>
-                                  <div className="card-icon">
-                                    <span className="badge bg-label-info rounded p-2">
-                                      <i className="bx bx-time-five bx-sm" />
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div> */}
-
-                          {/* <div className="col-lg-3 col-sm-6 mb-4">
-                            <div className="card">
-                              <div className="card-body">
-                                <div className="d-flex justify-content-between">
-                                  <div className="card-info">
-                                    <p className="card-text">Bounce Rate</p>
-                                    <div className="d-flex align-items-end mb-2">
-                                      <h4 className="card-title mb-0 me-2">
-                                        62%
-                                      </h4>
-                                      <small className="text-danger">
-                                        (-14%)
-                                      </small>
-                                    </div>
-                                    <small>Last Week Analytics</small>
-                                  </div>
-                                  <div className="card-icon">
-                                    <span className="badge bg-label-danger rounded p-2">
-                                      <i className="bx bx-pie-chart-alt bx-sm" />
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div> */}
-
-                          {/* <div className="col-lg-3 col-sm-6 mb-4">
-                            <div className="card">
-                              <div className="card-body">
-                                <div className="d-flex justify-content-between">
-                                  <div className="card-info">
-                                    <p className="card-text">Users</p>
-                                    <div className="d-flex align-items-end mb-2">
-                                      <h4 className="card-title mb-0 me-2">
-                                        18,472
-                                      </h4>
-                                      <small className="text-success">
-                                        (+42%)
-                                      </small>
-                                    </div>
-                                    <small>Last Week Analytics</small>
-                                  </div>
-                                  <div className="card-icon">
-                                    <span className="badge bg-label-success rounded p-2">
-                                      <i className="bx bx-user bx-sm" />
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div> */}
+                          </div>
                         </div>
                       </div>
                       <div

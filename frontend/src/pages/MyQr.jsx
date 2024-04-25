@@ -441,37 +441,15 @@ export default function MyQr() {
                     </span>{" "}
                     Mobile App
                   </h4>
-                  {/* <div className="row">
-                    <div className="col-md-12">
-                      <ul className="nav nav-pills flex-column flex-md-row mb-3">
-                        <li className="nav-item">
-                          <a
-                            className="nav-link active"
-                            href="javascript:void(0);"
-                          >
-                            <i className="bx bx-user me-1" /> Account
-                          </a>
-                        </li>
-                        <li className="nav-item">
-                          <a
-                            className="nav-link"
-                            href="pages-account-settings-notifications.html"
-                          >
-                            <i className="bx bx-bell me-1" /> Notifications
-                          </a>
-                        </li>
-                        <li className="nav-item">
-                          <a
-                            className="nav-link"
-                            href="pages-account-settings-connections.html"
-                          >
-                            <i className="bx bx-link-alt me-1" /> Connections
-                          </a>
-                        </li>
-                      </ul> 
-                     
-                    </div>
-                  </div> */}
+              
+              <div className='' style={{marginLeft:"250px"}}>
+              <img
+                      className="logo-light"
+                      src="img/qr.jpg"
+                      alt="logo"
+                      style={{ width: "700px" , height:"550px"}}
+                    />
+              </div>
                 </div>
                 {/* / Content */}
                 {/* Footer */}
