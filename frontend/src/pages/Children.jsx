@@ -483,37 +483,37 @@ export default function Children() {
                               <ul className="list-unstyled">
                                 <li className="mb-3">
                                   <span className="fw-medium me-2">
-                                    Username:
+                                    Student name :
                                   </span>
                                   <span>violet.dev</span>
                                 </li>
                                 <li className="mb-3">
-                                  <span className="fw-medium me-2">Email:</span>
-                                  <span>vafgot@vultukir.org</span>
+                                  <span className="fw-medium me-2"> Age :</span>
+                                  <span>13</span>
                                 </li>
                                 <li className="mb-3">
                                   <span className="fw-medium me-2">
-                                    Status:
+                                  Gender :
                                   </span>
-                                  <span className="badge bg-label-success">
-                                    Active
+                                  <span className="">
+                                    Male
                                   </span>
                                 </li>
                                 <li className="mb-3">
-                                  <span className="fw-medium me-2">Role:</span>
-                                  <span>Author</span>
-                                </li>
-                                <li className="mb-3">
-                                  <span className="fw-medium me-2">
-                                    Tax id:
-                                  </span>
-                                  <span>Tax-8965</span>
+                                  <span className="fw-medium me-2">Date of birth :</span>
+                                  <span>12-04-2023</span>
                                 </li>
                                 <li className="mb-3">
                                   <span className="fw-medium me-2">
-                                    Contact:
+                                    Examl level :
                                   </span>
-                                  <span>(123) 456-7890</span>
+                                  <span>level 1</span>
+                                </li>
+                                <li className="mb-3">
+                                  <span className="fw-medium me-2">
+                                    Grade :
+                                  </span>
+                                  <span> 1 </span>
                                 </li>
                                 <li className="mb-3">
                                   <span className="fw-medium me-2">

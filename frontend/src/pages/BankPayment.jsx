@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ParentSidebar from "../components/ParentSidebar";
 
+
 export default function BankPayment() {
   const [totalPayment, setTotalPayment] = useState(0);
   const [selectedMonths, setSelectedMonths] = useState([]);
@@ -835,11 +836,10 @@ export default function BankPayment() {
                                 )}
                               </div>
                             </div> */}
-                            
                           </div>
 
                           <div class="mb-3 mt-3">
-                            <label for="formFile" class="form-label">
+                            <label for="formFile" className="form-label mb-3">
                               Upload your slip here
                             </label>
                             <input
@@ -849,82 +849,134 @@ export default function BankPayment() {
                             />
                           </div>
 
-                          <div>
+                          <div className="mt-4">
                             <div class="row col-md-6 col-lg-12 mt-3 d-flex justify-content-between">
-                              <div
-                                className="card shadow mb-4 col-md-6"
-                                style={{ height: "200px", width: "400px" }}
-                              >
-                                <div className="card-body">
-                                  <div className="row card-title header-elements">
-                                    <div className="fs-5 mb-2">
-                                      <label>Bank details</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Account number: 1234567890</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Bank name: ABC Bank</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Branch: Main Branch</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>IFSC code: ABCD0123456</label>
-                                    </div>
+                            <div className="col-xl-4 col-lg-5 col-md-6">
+                                {/* About User */}
+                                <div className="card mb-4 shadow">
+                                  <div className="card-body">
+                                    <small className="text-muted text-uppercase">
+                                    Bank details
+                                    </small>
+                                    <ul className="list-unstyled mb-4 mt-3">
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-user" />
+                                        <span className="fw-medium mx-2">
+                                        Account number:
+                                        </span>{" "}
+                                        <span>1234567890</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-check" />
+                                        <span className="fw-medium mx-2">
+                                        Bank name:
+                                        </span>{" "}
+                                        <span>ABC Bank</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-star" />
+                                        <span className="fw-medium mx-2">
+                                        Branch:
+                                        </span>{" "}
+                                        <span> Main Branch</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-flag" />
+                                        <span className="fw-medium mx-2">
+                                        IFSC code:
+                                        </span>{" "}
+                                        <span>ABCD0123456</span>
+                                      </li>
+                                      
+                                    </ul>
                                   </div>
                                 </div>
                               </div>
 
-                              <div
-                                className="card shadow mb-4 col-md-6"
-                                style={{ height: "200px", width: "400px" }}
-                              >
-                                <div className="card-body">
-                                  <div className="row card-title header-elements">
-                                    <div className="fs-5 mb-2">
-                                      <label>Bank details</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Account number: 1234567890</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Bank name: ABC Bank</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Branch: Main Branch</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>IFSC code: ABCD0123456</label>
-                                    </div>
+                              <div className="col-xl-4 col-lg-5 col-md-6">
+                                {/* About User */}
+                                <div className="card mb-4 shadow">
+                                  <div className="card-body">
+                                    <small className="text-muted text-uppercase">
+                                    Bank details
+                                    </small>
+                                    <ul className="list-unstyled mb-4 mt-3">
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-user" />
+                                        <span className="fw-medium mx-2">
+                                        Account number:
+                                        </span>{" "}
+                                        <span>1234567890</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-check" />
+                                        <span className="fw-medium mx-2">
+                                        Bank name:
+                                        </span>{" "}
+                                        <span>ABC Bank</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-star" />
+                                        <span className="fw-medium mx-2">
+                                        Branch:
+                                        </span>{" "}
+                                        <span> Main Branch</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-flag" />
+                                        <span className="fw-medium mx-2">
+                                        IFSC code:
+                                        </span>{" "}
+                                        <span>ABCD0123456</span>
+                                      </li>
+                                      
+                                    </ul>
                                   </div>
                                 </div>
                               </div>
 
-                              <div
-                                className="card shadow mb-4 col-md-6"
-                                style={{ height: "200px", width: "400px" }}
-                              >
-                                <div className="card-body">
-                                  <div className="row card-title header-elements">
-                                    <div className="fs-5 mb-2">
-                                      <label>Bank details</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Account number: 1234567890</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Bank name: ABC Bank</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>Branch: Main Branch</label>
-                                    </div>
-                                    <div className="mb-1">
-                                      <label>IFSC code: ABCD0123456</label>
-                                    </div>
+                              <div className="col-xl-4 col-lg-5 col-md-6">
+                                {/* About User */}
+                                <div className="card mb-4 shadow">
+                                  <div className="card-body">
+                                    <small className="text-muted text-uppercase">
+                                    Bank details
+                                    </small>
+                                    <ul className="list-unstyled mb-4 mt-3">
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-user" />
+                                        <span className="fw-medium mx-2">
+                                        Account number:
+                                        </span>{" "}
+                                        <span>1234567890</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-check" />
+                                        <span className="fw-medium mx-2">
+                                        Bank name:
+                                        </span>{" "}
+                                        <span>ABC Bank</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-star" />
+                                        <span className="fw-medium mx-2">
+                                        Branch:
+                                        </span>{" "}
+                                        <span> Main Branch</span>
+                                      </li>
+                                      <li className="d-flex align-items-center mb-3">
+                                        <i className="bx bx-flag" />
+                                        <span className="fw-medium mx-2">
+                                        IFSC code:
+                                        </span>{" "}
+                                        <span>ABCD0123456</span>
+                                      </li>
+                                      
+                                    </ul>
                                   </div>
                                 </div>
                               </div>
+
                             </div>
                           </div>
                         </div>
@@ -933,17 +985,7 @@ export default function BankPayment() {
                         className="tab-pane fade"
                         id="navs-top-align-profile"
                       >
-                        <p>
-                          Donut dragée jelly pie halvah. Danish gingerbread
-                          bonbon cookie wafer candy oat cake ice cream. Gummies
-                          halvah tootsie roll muffin biscuit icing dessert
-                          gingerbread. Pastry ice cream cheesecake fruitcake.
-                        </p>
-                        <p className="mb-0">
-                          Jelly-o jelly beans icing pastry cake cake lemon
-                          drops. Muffin muffin pie tiramisu halvah cotton candy
-                          liquorice caramels.
-                        </p>
+                        
                       </div>
                     </div>
                   </div>

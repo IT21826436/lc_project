@@ -10,6 +10,8 @@ import BankPayment from './pages/BankPayment';
 import Children from './pages/Children';
 import MyQr from './pages/MyQr';
 import OnlineBank from './pages/OnlineBank';
+import Reg from './pages/Reg';
+import AdminDashboard from './pages/AdminDashboard';
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
           <Route exact path='/children' element={<Children/>} />
           <Route exact path='/my-qr' element={<MyQr/>} />
           <Route exact path='/online-bank' element={<OnlineBank/>} />
+          <Route exact path='/reg' element={<Reg/>} />
+          <Route exact path='/admin' element={<AdminDashboard/>} />
+
 
 
 
